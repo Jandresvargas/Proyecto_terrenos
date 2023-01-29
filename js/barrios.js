@@ -8,7 +8,10 @@ function style_barrios(feature){
 		weight: 0.5
 	};
 }
-// Carga de papa Geojson BDG
+function info_popup(feature, layer){
+	layer.bindPopup("<h4>" + feature.properties.nombre + "</h4><hr>"+"<strong> Area: </strong>"+feature.properties.area+"<br/>");
+	}
+// Carga Geojson BDG
 var barrios = L.geoJSON();
 $.post("php/upload_barrios.php",
 		{
@@ -19,7 +22,11 @@ $.post("php/upload_barrios.php",
 			barrios = eval('('+data+')')
 			var barrios = L.geoJSON(barrios, {
 				style: style_barrios,
-				onEachFeature: popup,
+				onEachFeature: info_popup,
 			}).addTo(map);
+		document.getElementById("text_tools");
 		}
+			//L.control.layers( overlays).addTo(map);
+	    
+			//L.control.mousePosition().addTo(map);
 	});

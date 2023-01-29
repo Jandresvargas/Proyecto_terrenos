@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang= "en">
+<head>
+    <!-- Metodo de codificacion-->
+    <meta charset="UTF-8">
+    <!-- Vista de compatibilidad-->
+    <meta http-equiv="X-UAV-Compatible" content = "IE=edge">
+    <meta name="viewport" content="width=device=width, initial-scale=1">
+    
+    <link rel="stylesheet" type="text/css" href="leaflet/leaflet.css">
+    <link rel ="stylesheet" type="text/css" href="css/mapa.css">
+ 	<link rel="stylesheet" type="text/css" href="Leaflet-MiniMap-master/dist/Control.MiniMap.min.css">
+    <link rel="stylesheet" type="text/css" href="Leaflet.Legend-master/src/leaflet.legend.css">
+    <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.EasyButton/2.4.0/easy-button.css">
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+    <link rel="stylesheet" type="text/css" href="posicion/src/L.Control.Locate.mapbox.css" />
+    <link rel="stylesheet" type="text/css" href="Leaflet.EasyButton-master/src/easy-button.css">
+
+    
+
+
+
+	<body>
+        
+        
+		<div id="map" style="z-index:0">
+ 
+            
+
+
+
+         <!-- Titulo-->
+        <title>GEOPREDIOS</title>
+        <!--<h2> Terrenos en venta comuna 22 </h2>-->
+        <fieldset>
+            
+        </fieldset>
+        <script src="leaflet-locatecontrol-gh-pages/dist/L.Control.Locate.min.js" type="text/javascript"></script>
+        <script src="leaflet/leaflet.js" type="text/javascript"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.2/jquery.js" type="text/javascript"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.EasyButton/2.4.0/easy-button.js" type="text/javascript"></script>
+        <script src="Leaflet-MiniMap-master/dist/Control.MiniMap.min.js" type="text/javascript"></script>
+        <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+        <script src="posicion/src/L.Control.Locate.js"></script>
+        <script src="Leaflet.EasyButton-master/src/easy-button.js"></script>
+      
+
+
+
+        <script src="js/terrenos.js" type="text/javascript"></script>
+        <script src="js/ver_barrios.js" type="text/javascript"></script>
+        <script src="js/uso_suelo.js" type="text/javascript"></script>
+        <script src="js/popup.js" type="text/javascript"></script>
+        <script src="js/localizar.js" type="text/javascript"></script>
+        <script src="js/mapa.js"></script>
+    
+            <script>
+            var legend = L.control({position: "bottomleft"});
+            legend.onAdd = function(map) {
+            var div = L.DomUtil.create("div", "legend");
+            div.innerHTML = 
+            '<p><b>GEOPREDIOS</b></p><hr>' +
+            '<li>Camila Carmona </li>' +
+            '<li>Andrés Vargas </li>' +
+            '</ul></p>' +
+            'Creado con Leaflet <br>' +
+            '<img src="images/legend.png">';
+            return div;
+        };
+        var basemaps={
+            "Mapa":map
+        };
+
+
+        L.control.scale().addTo(map);
+        legend.addTo(map)
+        L.Control.geocoder().addTo(map);
+        L.control.layers(basemaps,{position:'topright',
+        collapsed: true}).addTo(map)
+    </script>
+
+
+</body> 
+</head>
+</html>

@@ -1,14 +1,14 @@
 // STYLE 
 function style_comuna22(feature){
 	return{
-		fillColor: '#A3D9E7',
-		fillOpacity: 0.5,
-		color: '#80FF00',
+		fillColor: '',
+		fillOpacity: 0.2,
+		color: '',
 		opacity: 1,
 		weight: 0.5
 	};
 }
-// Carga de papa Geojson BDG
+// Carga Geojson BDG
 var comuna22 = L.geoJSON();
 $.post("php/upload_comuna22.php",
 		{
@@ -19,7 +19,6 @@ $.post("php/upload_comuna22.php",
 			comuna22 = eval('('+data+')')
 			var comuna22 = L.geoJSON(comuna22, {
 				style: style_comuna22,
-				onEachFeature: popup,
 			}).addTo(map);
 		}
 	});

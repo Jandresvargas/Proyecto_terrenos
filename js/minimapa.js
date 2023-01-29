@@ -1,5 +1,5 @@
 //agregar mini mapa
-var carto_light = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/light_all/{z}/{x}/{y}.png', {attribution: '©OpenStreetMap, ©CartoDB',subdomains: 'abcd',maxZoom: 24});
+var carto_light = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/light_all/{z}/{x}/{y}.png', {attribution: 'Univalle',subdomains: '2023',maxZoom: 24});
 
 var minimap = new L.Control.MiniMap(carto_light,
 	{
@@ -9,4 +9,4 @@ var minimap = new L.Control.MiniMap(carto_light,
 	}).addTo(map);
 	
 	//agrega escala
-	new L.control.scale().addTo(map);
+	

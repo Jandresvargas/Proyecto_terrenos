@@ -8,7 +8,7 @@ function style_actividad(feature){
 		weight: 0.5
 	};
 }
-// Carga de papa Geojson BDG
+// Carga Geojson BDG
 var areas_actividad = L.geoJSON();
 $.post("php/upload_areas_actividad.php",
 		{
@@ -19,7 +19,7 @@ $.post("php/upload_areas_actividad.php",
 			areas_actividad = eval('('+data+')')
 			var areas_actividad = L.geoJSON(areas_actividad, {
 				style: style_actividad,
-				onEachFeature: popup,
-			}).addTo(map);
+
+			});
 		}
 	});
